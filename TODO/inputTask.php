@@ -25,7 +25,7 @@
      
         <div class="flex justify-center gap-10">
         <button class="bg-blue-600 hover:bg-blue-400 rounded-2xl py-2 px-3 text-xl font-semi-bold text-white capitalize"><a href='#'>Add</a></button>
-        <button class="bg-green-600 hover:bg-green-400 rounded-2xl py-2 px-3 text-xl font-semi-bold text-white capitalize"><a href='#'>Back Home</a></button>
+        <button class="bg-green-600 hover:bg-green-400 rounded-2xl py-2 px-3 text-xl font-semi-bold text-white capitalize"><a href='index.php'>Back Home</a></button>
             </div>
     </div>
      </div>

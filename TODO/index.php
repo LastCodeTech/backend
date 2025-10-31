@@ -12,7 +12,7 @@
     <h1 class="text-xl md:text-2xl font-semi-bold md:font-bold capitalize text-center my-5">my todo list</h1>
   <div class="bg-white p-3 rounded-2xl mx-10 flex justify-between items-center ">
 <h1 class="text-xl font-semi-bold capitalize">add task here........</h1>
-<button class="bg-green-600 hover:bg-green-400 rounded-2xl py-2 px-3 text-xl font-semi-bold text-white capitalize"><a href='#'>add task</a></button>
+<button class="bg-green-600 hover:bg-green-400 rounded-2xl py-2 px-3 text-xl font-semi-bold text-white capitalize"><a href='inputTask.php'>add task</a></button>
 </div>
 
 
