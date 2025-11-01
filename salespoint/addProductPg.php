@@ -1,3 +1,6 @@
+<?php
+session_start();
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,10 +11,19 @@
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <script src="https://kit.fontawesome.com/39c5fdd9a0.js" crossorigin="anonymous"></script>
 </head>
-<body class="flex justify-center mt-20">
+<body >
+
+<?php 
+require_once('includes/addProductPgToasts.php');
+?>
+
+
+
+    <!-- <div class='bg-red-500 p-4 rounded-xl text-xl font-semi-bold text-white'></div> -->
+    <div class="flex justify-center mt-20">
     <div >
         <h1 class="text-2xl font-bold capitalize py-3 text-center">add new product on this page</h1>
-        <form action="#" method="post">
+        <form action="process.php" method="post">
             <div>
                 <label for="product" class="font-bold text-xl">product</label><br>
                 <input type="text" id="product" name="product" class="font-semi-bold p-3 h-20 w-120 outline-none border-1 rounded-2xl">
@@ -22,6 +34,7 @@
             </div>
             <input type="submit" value="add product" class="text-xl font-semi-bold capitalize py-2 px-3 rounded-2xl bg-blue-600  text-white">
         </form>
+    </div>
     </div>
 </body>
 </html>
