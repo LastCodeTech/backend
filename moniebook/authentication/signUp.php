@@ -6,21 +6,25 @@
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <script src="https://kit.fontawesome.com/39c5fdd9a0.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <div class='flex justify-center'>
+<body class=''>
+    <div class='flex justify-center mt-30'>
         <div>
-            <img src='../images/moniepo'
-    <h1 class="text font-bold text-xl capitalize my-5 text-center">Sign in with Moniepoint</h1>
-    <h2 class='text-base.font-semi-bold text-center'>Sign in with your Moniepoint details to continue</h2>
+          
+    <h1 class="text font-bold text-2xl capitalize my-5 text-center">Sign in with Moniepoint</h1>
+    <h2 class='text-xl font-semi-bold text-center'>Sign in with your Moniepoint details to continue</h2>
     <div>
         <form method='post' action='post'>
         <div class='mt-5'><label for='phoneNumber'>phone number</label><br />
-        <input type='tel' id='phoneNumber' name='phoneNumber' class='border-1 h-12 w-100 rounded-xl outline-none'></div>
+        <input type='number' id='phoneNumber' name='phoneNumber' class='p-3 border-1 h-12 w-100 rounded-xl outline-none'></div>
         <div class='my-5'>
             <label for='password'>password</label><br />
-            <input type='password' id='password' name ='password' class='border-1 h-12 w-100 rounded-xl outline-none'>
+            <input type='password' id='password' name ='password' class='p-3 border-1 h-12 w-100 rounded-xl outline-none'>
         </div>
-        <input type='submit' value='continue' class='h-10 px-42 rounded-xl text-white bg-blue-600 text-base capitalize'>
+         <div class='my-5'>
+            <label for='confirmPassword'>confirm password</label><br />
+            <input type='password' id='confirmPassword' name ='confirmPassword' class='p-3 border-1 h-12 w-100 rounded-xl outline-none'>
+        </div>
+        <input type='submit' value='continue' class=' h-10 px-42 rounded-xl text-white bg-blue-600 text-base capitalize'>
         </form>
     </div>
 </div>
