@@ -23,7 +23,7 @@ require_once('includes/addProductPgToasts.php');
     <div class="flex justify-center mt-20">
     <div >
         <h1 class="text-2xl font-bold capitalize py-3 text-center">add new product on this page</h1>
-        <form action="process.php" method="post">
+        <form action="addProductProcess.php" method="post">
             <div>
                 <label for="product" class="font-bold text-xl">product</label><br>
                 <input type="text" id="product" name="product" class="font-semi-bold p-3 h-20 w-120 outline-none border-1 rounded-2xl">
