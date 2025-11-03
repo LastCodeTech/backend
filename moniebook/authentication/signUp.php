@@ -29,7 +29,7 @@ require_once('../includes/toasts.php');
 </div> -->
     
    
-        <form method='post' action='../brrr.php'>
+        <form method='post' action='../includes/signupProcess.php'>
         <div class='mt-5'><label for='phoneNumber'>phone number</label><br />
         <input type='number' id='phoneNumber' name='phoneNumber' class='p-3 border-1 h-12 w-100 rounded-xl outline-none'></div>
         <div class='my-5'>

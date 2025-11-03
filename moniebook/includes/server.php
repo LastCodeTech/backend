@@ -1,5 +1,5 @@
 <?php
-$dbhandle='mysql:host=localhost;dbname=practicedb';
+$dbhandle='mysql:host=localhost;dbname=moniebook';
 $uname='root';
 $password='';
 
