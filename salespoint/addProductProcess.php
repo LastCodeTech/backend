@@ -17,7 +17,7 @@ if(!empty($product) && !empty($price)){
    
    if($insert){
     $_SESSION['added']='product added successfully' ;
-  header('location:addProductPg.php') ;
+  header('location:homepage.php') ;
    }
    else{
     $_SESSION['not_added']='An error occurred,product was not added' ;
