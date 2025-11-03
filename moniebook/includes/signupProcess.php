@@ -6,14 +6,14 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $password=htmlspecialchars($_POST['password']);
     $confirmPassword=htmlspecialchars($_POST['confirmPassword']);
     if(!empty($phoneNumber)&& !empty($password)&& !empty($confirmPassword)){
-        if($password==$confirmPassword){
+        if(strlen($password)>=8 && strlen($phoneNumber) >=8){
+            if($password==$confirmPassword){
             $encryptPassword = password_hash($password,PASSWORD_DEFAULT);
             $checkNumber = 'SELECT * FROM users where phone_number = ?';
         $prep = $pdo->prepare($checkNumber);
         $prep->execute([$phoneNumber]);
         $result = $prep->fetchAll(PDO::FETCH_ASSOC);
            
-
             if(empty($result)){
                 $query ='INSERT INTO users(phone_number,password) VALUES(?,?);';
                 $prepare=$pdo->prepare($query);
@@ -43,8 +43,17 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
             header('location: ../authentication\signUp.php');
          exit();
         }
+        }
+        
+        // else
+        else{
+             $_SESSION['input_length']='password and phone number must be more than 8 character';
+            header('location: ../authentication\signUp.php');
+         exit();
+        }
 
     }
+    //////////////
     else{
          $_SESSION['input_all_fields']='pls input all fields';
          header('location: ../authentication\signUp.php');
