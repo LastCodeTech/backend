@@ -40,25 +40,26 @@ if(isset($_SESSION['answer'])){
     $_SESSION['productname']= $row['productname'] ;
     $_SESSION['price']= $row['price'] ;
 ?>
-     <div class='bg-green-100 border-2 border-green-700 p-20 rounded-2xl mt-20 flex gap-20'>
+     <div class='bg-green-100 border-2 border-green-700 py-8 rounded-2xl mt-5 flex justify-center gap-20'>
    <?php
  if(isset( $_SESSION['productid'])){
-    ?><h2 class="text-xl font-bold capitalize"><?php echo $_SESSION['productid'] ?></h2>
+    ?><h2 class="text-xl font-bold capitalize hidden"><?php echo $_SESSION['productid'] ?></h2>
     <?php
     // unset($_SESSION['productid']);
  } ?>
     <?php
  if(isset( $_SESSION['productname'])){
-    ?><h2 class="text-xl font-bold capitalize"><?php echo $_SESSION['productname'] ?></h2>
+    ?><h2 class="text-xl font-bold capitalize">product: <?php echo $_SESSION['productname'] ?></h2>
     <?php
     // unset($_SESSION['productname']);
  } ?>
    <?php
  if(isset( $_SESSION['price'])){
-    ?><h2 class="text-xl font-bold capitalize"><?php echo $_SESSION['price'] ?></h2>
+    ?><h2 class="text-xl font-bold capitalize">price: <?php echo $_SESSION['price'] ?></h2>
     <?php
     // unset($_SESSION['price']);
  } ?>
+ <button><a href='' class='text-base font-bold capitalize py-1 px-2 rounded-xl bg-blue-600 text-white'>add to cart</a></button>
  </div>
    <?php
 }}
