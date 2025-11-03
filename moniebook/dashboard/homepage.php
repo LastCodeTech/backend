@@ -18,7 +18,7 @@
             <div class="flex justify-between my-10 items-center mx-20">
                 <div class="py-12 text-center px-30 rounded-2xl bg-blue-200 border-1 border-blue-400"><h1>34</h1><h1>total items</h1></div>
                 <div class="border-2 py-8 px-10 rounded-2xl border-blue-400">
-                    <form>
+                    <form method="get" action="../includes/dashboardProcess.php">
                         <label for="search" class="text-xl font-semi-bold capitalize">search</label><br >
                         <input type="search" class="border-1 h-12 w-120 rounded-xl outline-none p-2" name="search" id="search">
                     </form>
