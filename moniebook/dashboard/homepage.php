@@ -10,9 +10,10 @@
   <script src="https://kit.fontawesome.com/39c5fdd9a0.js" crossorigin="anonymous"></script>
 </head>
 <body class="my-5 mx-10">
-        <div>
-            <h2 class="text-2xl font-semi-bold capitalize">hello,</h2>
-            <h2 class="text-2xl font-thin capitalize">welcome,user name welcome to your inventory dashboard</h2>
+        <div class='flex justify-between items-center'>
+            <div><h2 class="text-2xl font-semi-bold capitalize">hello,</h2>
+            <h2 class="text-2xl font-thin capitalize">welcome,user name welcome to your inventory dashboard</h2></div>
+            <div class='bg-red-200 border-1 border-red-400 rounded-xl text-xl font-semi-bold py-1 px-2'>dhhdhhd</div>
         </div>
         <div>
             <div class="flex justify-between my-10 items-center mx-20">
@@ -26,7 +27,7 @@
             </div>
             <div class="flex justify-between my-2">
                 <h2 class="text-2xl font-bold uppercase">inventory</h2>
-                <h2><a href='#' class="bg-green-500 py-2 px-3 rounded-xl hover:bg-green-600 text-white text-base font-semi-bold uppercase">add new product</a></h2>
+                <h2><a href='#' class="bg-blue-500 py-2 px-3 rounded-xl hover:bg-blue-600 text-white text-base font-semi-bold uppercase">add new product</a></h2>
             </div>
             
             <table class="w-[100%] bg-blue-600">
