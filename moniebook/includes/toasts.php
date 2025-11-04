@@ -7,6 +7,8 @@ if(isset($_SESSION['acct_created'])){
 unset($_SESSION['acct_created']);
 }
 ?>
+
+
 <?php 
 if(isset($_SESSION['logged_in'])){
     ?>
@@ -16,6 +18,17 @@ if(isset($_SESSION['logged_in'])){
 unset($_SESSION['logged_in']);
 }
 ?>
+<?php 
+if(isset($_SESSION['product_added-successfully'])){
+    ?>
+    <div class='bg-green-200 p-3 rounded-2xl border-1 border-green-600 my-5'>
+<h2 class='text-xl font-semi-bold text-center '><?php echo $_SESSION['product_added-successfully'] ?></h2>
+</div> <?php
+unset($_SESSION['product_added-successfully']);
+}
+?>
+
+
 <?php 
 if(isset($_SESSION['acct_not_created'])){
     ?>
@@ -79,3 +92,49 @@ if(isset($_SESSION['input_length'])){
 unset($_SESSION['input_length']);
 }
 ?>
+<?php 
+if(isset($_SESSION['no_input'])){
+    ?>
+    <div class='bg-red-200 p-3 rounded-2xl border-1 border-red-400 my-5'>
+<h2 class='text-xl font-semi-bold text-center '><?php echo $_SESSION['no_input'] ?></h2>
+</div> <?php
+unset($_SESSION['no_input']);
+}
+?>
+<?php 
+if(isset( $_SESSION['no_product'])){
+    ?>
+    <div class='bg-red-200 p-3 rounded-2xl border-1 border-red-400 my-5'>
+<h2 class='text-xl font-semi-bold text-center '><?php echo  $_SESSION['no_product'] ?></h2>
+</div> <?php
+unset( $_SESSION['no_product']);
+}
+?>
+<?php 
+if(isset($_SESSION['input_all_fields'])){
+    ?>
+    <div class='bg-red-200 p-3 rounded-2xl border-1 border-red-400 my-5'>
+<h2 class='text-xl font-semi-bold text-center '><?php echo  $_SESSION['input_all_fields'] ?></h2>
+</div> <?php
+unset( $_SESSION['input_all_fields']);
+}
+?>
+<?php 
+if(isset($_SESSION['an_error_occurred'])){
+    ?>
+    <div class='bg-red-200 p-3 rounded-2xl border-1 border-red-400 my-5'>
+<h2 class='text-xl font-semi-bold text-center '><?php echo  $_SESSION['an_error_occurred'] ?></h2>
+</div> <?php
+unset( $_SESSION['an_error_occurred']);
+}
+?>
+<?php 
+if(isset($_SESSION['product_already_exist'])){
+    ?>
+    <div class='bg-red-200 p-3 rounded-2xl border-1 border-red-400 my-5'>
+<h2 class='text-xl font-semi-bold text-center '><?php echo  $_SESSION['product_already_exist'] ?></h2>
+</div> <?php
+unset( $_SESSION['product_already_exist']);
+}
+?>
+

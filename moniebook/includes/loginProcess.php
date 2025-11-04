@@ -23,7 +23,8 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         $verified = password_verify($password,$registered_password);
         if($verified){
           $_SESSION['logged_in']='welcome ,ure now logged in';
-         header('location: ../authentication\login.php');
+          $_SESSION['user_id']=$given['id'];
+         header('location: ../dashboard/homepage.php');
          exit();
         }
         else{
