@@ -27,7 +27,7 @@
             </div>
             <div class="flex justify-between my-2">
                 <h2 class="text-2xl font-bold uppercase">inventory</h2>
-                <h2><a href='#' class="bg-blue-500 py-2 px-3 rounded-xl hover:bg-blue-600 text-white text-base font-semi-bold uppercase">add new product</a></h2>
+                <h2><a href='addProductPg.php' class="bg-blue-500 py-2 px-3 rounded-xl hover:bg-blue-600 text-white text-base font-semi-bold uppercase">add new product</a></h2>
             </div>
             
             <table class="w-[100%] bg-blue-600">
