@@ -11,6 +11,7 @@ $query='SELECT * FROM products where user_id=?';
 $prep=$pdo->prepare($query);
 $prep->execute([$_SESSION['user_id']]);
 $result=$prep->fetchAll(PDO::FETCH_ASSOC);
+$total_product=count($result);
 ?>
 
 
@@ -38,7 +39,7 @@ $result=$prep->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <div>
             <div class="flex justify-between my-10 items-center mx-20">
-                <div class="py-12 text-center px-30 rounded-2xl bg-blue-200 border-1 border-blue-400"><h1>34</h1><h1>total items</h1></div>
+                <div class="py-12 text-center px-30 rounded-2xl bg-blue-200 border-1 border-blue-400"><h1><?php echo $total_product ?></h1><h1>total items</h1></div>
                 <div class="border-2 py-8 px-10 rounded-2xl border-blue-400">
                     <form method="get" action="../includes/dashboardProcess.php">
                         <label for="search" class="text-xl font-semi-bold capitalize">search</label><br >
@@ -82,23 +83,40 @@ $result=$prep->fetchAll(PDO::FETCH_ASSOC);
                         }
                         unset($_SESSION['price']);
                         ?> 
-                    <td class="py-4 rounded-4xl"><h1 class="text-base font-semi-bold uppercase"><a href='#' class="bg-yellow-400 py-2 px-3 rounded-xl hover:bg-yellow-300 text-white">edit</a></h1></td>
-                    <td class="py-4 rounded-4xl"><h1 class="text-base font-semi-bold uppercase"><a href='#' class="bg-red-500 py-2 px-3 rounded-xl hover:bg-red-600 text-white">delete</a></h1></td>
-                     </tr>
+                        <?php 
+                        if(isset( $_SESSION['product_id'])){
+                            ?>
+                             <td class="py-2 rounded-4xl"><h1 class="text-base font-semi-bold uppercase"><a href='editpg.php?product_id=<?php echo $_SESSION['product_id'] ?>' class="bg-yellow-400 py-2 px-3 rounded-xl hover:bg-yellow-300 text-white">edit</a></h1></td><?php
+                        }
+                        unset($_SESSION['product_id']);
+                        ?> 
+                    <td class="py-2 rounded-4xl"><form action='../includes/delete.php' method="POST">
+                    <input type="hidden" name="product_id" value="<?php echo $product_id; ?>">
+                    <button
+                    class="deleteBtn border-1 rounded-xl bg-red-500 text-white font-semi-bold hover:bg-red-400 text-base py-1 px-2 md:text-xl capitalize">Delete
+                    </button>
+                    </form></td>
+                    </tr>
                 </tbody>
                <?php
                foreach($result as $row){
+                $product_id=$row['id'];
                 $product=$row['product_name'];
                 $quantity=$row['quantity'];
                 $price=$row['price'];
                 ?>
                    <tbody class="bg-blue-200 border-2 border-blue-400 text-center ">
                     <tr >  
-                    <td class="py-4 rounded-4xl "><h1 class="text-base font-semi-bold uppercase"><?php echo $product;  ?></h1></td>
-                    <td class="py-4 rounded-4xl"><h1 class="text-base font-semi-bold uppercase"><?php echo $quantity; ?></h1></td>
-                    <td class="py-4 rounded-4xl"><h1 class="text-base font-semi-bold uppercase"><?php echo $price; ?></h1></td>
-                    <td class="py-4 rounded-4xl"><h1 class="text-base font-semi-bold uppercase"><a href='#' class="bg-yellow-400 py-2 px-3 rounded-xl hover:bg-yellow-300 text-white">edit</a></h1></td>
-                    <td class="py-4 rounded-4xl"><h1 class="text-base font-semi-bold uppercase"><a href='#' class="bg-red-500 py-2 px-3 rounded-xl hover:bg-red-600 text-white">delete</a></h1></td>
+                    <td class="py-2 rounded-4xl "><h1 class="text-base font-semi-bold uppercase"><?php echo $product;  ?></h1></td>
+                    <td class="py-2 rounded-4xl"><h1 class="text-base font-semi-bold uppercase"><?php echo $quantity; ?></h1></td>
+                    <td class="py-2 rounded-4xl"><h1 class="text-base font-semi-bold uppercase"><?php echo $price; ?></h1></td>
+                    <td class="py-2 rounded-4xl"><h1 class="text-base font-semi-bold uppercase"><a href='editpg.php?product_id=<?php echo $product_id ?>' class="bg-yellow-400 py-2 px-3 rounded-xl hover:bg-yellow-300 text-white">edit</a></h1></td>
+                    <td class="py-2 rounded-4xl"><form action='../includes/delete.php' method="POST">
+                    <input type="hidden" name="product_id" value="<?php echo $product_id; ?>">
+                    <button
+                    class="deleteBtn border-1 rounded-xl bg-red-500 text-white font-semi-bold hover:bg-red-400 text-base py-1 px-2 md:text-xl capitalize">Delete
+                    </button>
+                    </form></td>
                     </tr>
                    
                 </tbody>
