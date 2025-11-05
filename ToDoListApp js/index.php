@@ -69,22 +69,41 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
               $id = $row['id'];
               $title = $row['title'];
               $description = $row['description'];
+              $completed = $row['completed'];
             ?>
 
                <div id="insertedHere">
+                <!-- START -->
         <div class="bg-white flex justify-between gap-5 py-2 px-3 rounded-2xl md:gap-10 items-center mx-5 my-3">
           <div class='flex items-center gap-10'>
           <div class="flex items-center ">
-            
-            <input type="checkbox"
-              class="appearance-none w-5 h-5 md:h-8 md:w-8 border-2 border-gray-400 rounded-md bg-white checked:bg-blue-600 checked:border-transparent peer" />
+              
+          
+            <?php
+              if($completed){
+                ?>
+                  <i class="fa fa-check-square text-[35px] text-red-700"></i>
+                <?php
+              }else{
+                ?>
+                <a href="includes/mark.php?ref=<?php echo $id;?>">
+            <!-- <input type="checkbox"
+              class="appearance-none w-5 h-5 md:h-8 md:w-8 border-2 border-gray-400 rounded-md bg-white checked:bg-blue-600 checked:border-transparent peer" /> -->
+              
+              
+              mark
+            </a>
+                <?php
+              }
+            ?>
             <svg class="absolute w-4 h-4 md:h-7 md:w-7 text-white pointer-events-none hidden peer-checked:block"
               viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"
               stroke-linejoin="round">
+
               <polyline points="20 6 9 17 4 12"></polyline>
             </svg>
           </div>
-          <div class="text-base md:text-xl text-gray-700 " id="todotext">
+          <div class="text-base md:text-xl text-gray-700  <?php echo $completed? 'line-through' : ''?> " id="todotext">
               <h2 class="font-bold"><?php echo $title; ?></h2>
            
            <p> <?php echo $description; ?></p>
@@ -100,6 +119,8 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
             </form>
         </div>
         </div>
+        <!-- END -->
+
       </div>
 
               <?php
