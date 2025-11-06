@@ -1,4 +1,6 @@
-<?php ?>
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,9 +13,10 @@
   <script src="https://kit.fontawesome.com/39c5fdd9a0.js" crossorigin="anonymous"></script>
 </head>
 <body class="mb-10">
+
     <div class="bg-blue-700 flex justify-between items-center px-5 py-2">
         <div class="flex items-center "><img src='../images/moniepoint_logo-removebg-preview (1).png' class=" h-20 w-25"><h2 class="text-3xl text-white font-semi-bold-capitalize">moniebook</h2></div>
-        <div class="flex items-center gap-5"><form action="../includes/dashboardProcess.php" method='post'>
+        <div class="flex items-center gap-5"><form action="../includes/dashboardProcess.php" method='get'>
             <input type="search" name="search" id="search" class="w-120 h-15 outline-none rounded-xl p-3 border-white text-white   border-1 ">
         </form>
         <div><em class="fa-solid fa-cart-shopping text-4xl text-white"></em></div></div>
