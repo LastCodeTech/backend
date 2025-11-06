@@ -155,4 +155,13 @@ if(isset($_SESSION['not_updated_successfully'])){
 unset( $_SESSION['not_updated_successfully']);
 }
 ?>
+<?php 
+if(isset($_SESSION['no_search'])){
+    ?>
+    <div class='bg-red-200 p-3 rounded-2xl border-1 border-red-400 my-5'>
+<h2 class='text-xl font-semi-bold text-center '><?php echo  $_SESSION['no_search'] ?></h2>
+</div> <?php
+unset( $_SESSION['no_search']);
+}
+?>
 
