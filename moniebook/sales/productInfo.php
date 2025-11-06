@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <head>
-    <title>cart</title>
+    <title>product info</title>
  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <script src="https://kit.fontawesome.com/39c5fdd9a0.js" crossorigin="anonymous"></script>
 </head>
-<body></body>
+<body>
+    
+</body>
 </html>
