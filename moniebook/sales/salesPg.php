@@ -41,14 +41,22 @@ session_start();
    if(isset($_SESSION['result'])){
     foreach($_SESSION['result'] as $row){
        $_SESSION['productName']=$row['product_name'];
-        $_SESSION['price']=$row['price']; ?>
-         
-        <div class="rounded-2xl bg-blue-100 border-2 shadow-lg shadow-stone-400 border-blue-700 py-20 px-30 flex justify-center">
+        $_SESSION['price']=$row['price'];
+         $_SESSION['result']='product'; ?>
+        
+        <div class="rounded-2xl bg-blue-100 border-2 shadow-lg shadow-stone-400 border-blue-700 py-20 px-30 flex justify-center productCard">
             <div>
                 <?php 
                 if(isset($_SESSION['productName'])){
                     ?>
                     <h1 class="text-3xl font-semi-bold capitalize text-center"><?php echo $_SESSION['productName'] ?></h1><?php
+                }
+               
+                ?>
+                <?php 
+                if(isset($_SESSION['result'])){
+                    ?>
+                    <input class="text-3xl font-semi-bold capitalize text-center hidden data" value='<?php echo $_SESSION['result'] ?>'><?php
                 }
                
                 ?>
@@ -68,6 +76,6 @@ session_start();
    unset($_SESSION['result']);
    ?></div>
    
-   
+  <script src="../js/salesPg.js"></script> 
 </body>
 </html>
